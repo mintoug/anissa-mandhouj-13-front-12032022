@@ -1,25 +1,26 @@
 import React from 'react'
 import '../css/main.css'
 import logo from '../assets/argentBankLogo.png';
+import { Link } from 'react-router-dom';
 
 function Signin() {
   return (
 
-        <body>
+  <div>
     <nav className="main-nav">
-      <a className="main-nav-logo" href="./index.html">
+      <Link className="main-nav-logo" to="/">
         <img
           className="main-nav-logo-image"
           src={logo}
           alt="Argent Bank Logo"
         />
         <h1 className="sr-only">Argent Bank</h1>
-      </a>
+      </Link>
       <div>
-        <a className="main-nav-item" href="./sign-in.html">
+        <Link className="main-nav-item" to="/Signin">
           <i className="fa fa-user-circle"></i>
           Sign In
-        </a>
+        </Link>
       </div>
     </nav>
     <main className="main bg-dark">
@@ -28,31 +29,27 @@ function Signin() {
         <h1>Sign In</h1>
         <form>
           <div className="input-wrapper">
-            <label for="username">Username</label
+            <label htmlFor="username">Username</label
             ><input type="text" id="username" />
           </div>
           <div className="input-wrapper">
-            <label for="password">Password</label
+            <label htmlFor="password">Password</label
             ><input type="password" id="password" />
           </div>
           <div className="input-remember">
-            <input type="checkbox" id="remember-me" /><label for="remember-me"
+            <input type="checkbox" id="remember-me" /><label htmlFor="remember-me"
               >Remember me</label
             >
           </div>
         
-          {/* <a href="./user.html" className="sign-in-button">Sign In</a>
+          <Link to="/User" className="sign-in-button">Sign In</Link>
           
-           <button className="sign-in-button">Sign In</button>  */}
+           <button className="sign-in-button">Sign In</button> 
           
         </form>
       </section>
     </main>
-    <footer className="footer">
-      <p className="footer-text">Copyright 2020 Argent Bank</p>
-    </footer>
-
-  </body>
+  </div>
 
   );
 }
