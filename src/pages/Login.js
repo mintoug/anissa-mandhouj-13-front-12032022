@@ -3,7 +3,7 @@ import '../css/main.css'
 import logo from '../assets/argentBankLogo.png';
 import { Link } from 'react-router-dom';
 
-function Signin() {
+function Login() {
   return (
 
   <div>
@@ -17,7 +17,7 @@ function Signin() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
       <div>
-        <Link className="main-nav-item" to="/Signin">
+        <Link className="main-nav-item" to="/login">
           <i className="fa fa-user-circle"></i>
           Sign In
         </Link>
@@ -42,7 +42,7 @@ function Signin() {
             >
           </div>
         
-          <Link to="/User" className="sign-in-button">Sign In</Link>
+          <Link to="/profil" className="sign-in-button">Login</Link>
           
            <button className="sign-in-button">Sign In</button> 
           
@@ -54,4 +54,4 @@ function Signin() {
   );
 }
 
-export default Signin
+export default Login

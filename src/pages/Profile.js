@@ -4,7 +4,7 @@ import logo from '../assets/argentBankLogo.png';
 import '../css/main.css'
 
 
-function User() {
+function Profile() {
   return (
   <div>
     <nav className="main-nav">
@@ -17,7 +17,7 @@ function User() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
       <div>
-        <Link className="main-nav-item" to="/User">
+        <Link className="main-nav-item" to="/Profile">
           <i className="fa fa-user-circle"></i>
           Tony
         </Link>
@@ -70,4 +70,4 @@ function User() {
   );
 }
 
-export default User
+export default Profile

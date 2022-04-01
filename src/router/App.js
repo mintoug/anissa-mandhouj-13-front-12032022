@@ -1,36 +1,30 @@
 import {
   BrowserRouter,
-  Routes,
   Route,
+  Switch
 } from "react-router-dom";
-import User from "../pages/User";
-import Signin from "../pages/Signin";
+import Profile from "../pages/Profile";
+import Login from "../pages/Login";
 import Home from "../pages/Home"
-import Error404 from "../pages/Error404";
+import Error from "../pages/Error";
 import Footer from "../components/footer/Footer";
-import Privaterouter from "../components/footer/privaterouter/Privaterouter";
-const user = {
-  isConnected : false
-}
+
+
 
 function App() {
   return (
     <div className="App">
      
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home/>}>  </Route>
-      <Route path="/user" element={
-                <Privaterouter user={user}>
-                  <User />
-                </Privaterouter>}>  
-      </Route>
-      <Route path="/signin" element={<Signin />}>  </Route>
-      <Route path="*" element={<Error404 />}>  </Route>
-    </Routes>
+    <Switch>
+      <Route path="/" component = {Home} />  
+      <Route path="/login"  component = {Login} /> 
+      <Route path="/profile" component = {Profile} /> 
+      <Route path="*" component = {Error} />  
+    </Switch>
     <Footer />
 
-       </BrowserRouter>
+  </BrowserRouter>
     </div>
   );
 }
