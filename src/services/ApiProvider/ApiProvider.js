@@ -2,7 +2,7 @@ import axios from 'axios'
 import { 
     API_URL_USER_LOGIN,
     API_URL_USER_PROFILE 
-} from 'utils/constants/constants';
+} from '../../utils/constants/constants';
 
 class ApiProvider {
    

@@ -1,13 +1,12 @@
-import React from 'react'
+import '../../css/main.css';
+import React from 'react';
 
-function Footer() {
-  return (
-    <div>
-       <footer className="footer">
-      <p className="footer-text">Copyright 2020 Argent Bank</p>
-    </footer> 
-    </div>
-  )
+const Footer = () => {
+    return (
+        <footer className='footer'>
+            <p className='footerText'>Copyright 2021 Argent Bank</p>
+        </footer>
+    );
 }
 
-export default Footer
+export default Footer;

@@ -42,7 +42,7 @@ function Login() {
             >
           </div>
         
-          <Link to="/profil" className="sign-in-button">Login</Link>
+          {/* <Link to="/profil" className="sign-in-button">Login</Link> */}
           
            <button className="sign-in-button">Sign In</button> 
           

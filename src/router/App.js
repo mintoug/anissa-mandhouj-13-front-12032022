@@ -3,15 +3,17 @@ import {
   Route,
   Switch
 } from "react-router-dom";
+import { connect } from 'react-redux';
 import Profile from "../pages/Profile";
 import Login from "../pages/Login";
 import Home from "../pages/Home"
 import Error from "../pages/Error";
-import Footer from "../components/footer/Footer";
-
-
+import Footer from "../components/footer/Footer.js";
+import LogInJWT from "../utils/storage/LogInJWT";
+import PropTypes from 'prop-types';
 
 function App() {
+  LogInJWT();
   return (
     <div className="App">
      
@@ -28,5 +30,14 @@ function App() {
     </div>
   );
 }
+const mapStateToProps = state => {
+  return {
+      connected: state.user.connected,
+  };
+}
 
-export default App;
+App.propTypes = {
+  connected : PropTypes.bool.isRequired,
+}
+
+export default connect(mapStateToProps)(App);
