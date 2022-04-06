@@ -11,6 +11,7 @@ import Error from "../pages/Error";
 import Footer from "../components/footer/Footer.js";
 import LogInJWT from "../utils/storage/LogInJWT";
 import PropTypes from 'prop-types';
+import Header from "../components/header/Header";
 
 function App() {
   LogInJWT();
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
      
   <BrowserRouter>
+  <Header />
     <Switch>
       <Route path="/" component = {Home} />  
       <Route path="/login"  component = {Login} /> 
