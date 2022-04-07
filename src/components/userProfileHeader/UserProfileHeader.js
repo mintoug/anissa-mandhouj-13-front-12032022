@@ -59,32 +59,32 @@ const UserProfileHeader = (props) => {
     }
     
     return (
-        <section className='headerProfile'>
+        <section className='header profile'>
             {editName 
                 ? (
                 <Fragment>
                     <h1>Welcome back</h1>
                     {errorMessage.length > 0 && <div className='error-msg'>{errorMessage}</div>}
                     <Input 
-                        className='headerProfileInput' 
+                        className='header-profile-input' 
                         type='text'
                         placeholder={firstName}
                         action={(e)=> setFirstName(e.target.value)}
                     />
                     <Input 
-                        className='headerProfileInput' 
+                        className='header-profile-input' 
                         type='text'
                         placeholder={lastName}
                         action={(e)=> setLastName(e.target.value)}
                     />
                     <br />
                     <Button 
-                        className='buttonEdited'
+                        className='edit-button'
                         text='Save'
                         action={() => changeUserProfile()}
                         />
                     <Button 
-                        className='buttonEdited' 
+                        className='edit-button' 
                         text='Cancel' 
                         action={() => setEditName(false)}
                         />
@@ -97,7 +97,7 @@ const UserProfileHeader = (props) => {
                         {errorMessage.length > 0 && <div className='error-msg'>{errorMessage}</div>}
                     </h1>
                     <Button 
-                        className='editButton' 
+                        className='edit-button' 
                         text='Edit Name' 
                         action={() => setEditName(true)}
                     />

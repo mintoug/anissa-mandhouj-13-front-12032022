@@ -1,45 +1,47 @@
-import {
-  BrowserRouter,
-  Route,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Profile from "../pages/Profile";
-import Login from "../pages/Login";
-import Home from "../pages/Home"
-import Error from "../pages/Error";
-import Footer from "../components/footer/Footer.js";
-import LogInJWT from "../utils/storage/LogInJWT";
+import Footer from '../components/footer/Footer';
+import Header from '../components/header/Header';
+import Login from '../pages/Login';
+import LogInJWT from '../utils/storage/LogInJWT';
 import PropTypes from 'prop-types';
-import Header from "../components/header/Header";
+import React from 'react';
+import { routes, MatchedRoutes } from '../router/routes';
 
-function App() {
-  LogInJWT();
-  return (
-    <div className="App">
-     
-  <BrowserRouter>
-  <Header />
-    <Switch>
-      <Route path="/" component = {Home} />  
-      <Route path="/login"  component = {Login} /> 
-      <Route path="/profile" component = {Profile} /> 
-      <Route path="*" component = {Error} />  
-    </Switch>
-    <Footer />
+const App = (props) => {
+    // to establish the path to the API documentation
+  
+    // to log in the user using the JWT Token
+    LogInJWT();
 
-  </BrowserRouter>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                    <Header />
+                    <Switch>
+                        {routes.map((route, index) =>
+                            !props.connected && route.private 
+                            ? (
+                                <Login key={index} exact path={route.path} />
+                            ) : (
+                                <MatchedRoutes key={index} {...route} />
+                            )
+                        )}
+                    </Switch>
+                    <Footer />
+            </Router>
+        </div>
+    );
 }
+
 const mapStateToProps = state => {
-  return {
-      connected: state.user.connected,
-  };
+    return {
+        connected: state.user.connected,
+    };
 }
 
 App.propTypes = {
-  connected : PropTypes.bool.isRequired,
+    connected : PropTypes.bool.isRequired,
 }
 
 export default connect(mapStateToProps)(App);

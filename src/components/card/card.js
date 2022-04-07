@@ -5,13 +5,13 @@ import React from 'react';
 const Card = ({title, amount, description}) => {
     return (
         <section className='account'>
-            <article className='accountContentWrapper'>
-                <h3 className='accountTitle'>{title}</h3>
-                <p className='accountAmount'>{amount}</p>
-                <p className='accountAmountDescription'>{description}</p>
+            <article className='account-content-wrapper'>
+                <h3 className='account-title'>{title}</h3>
+                <p className='account-amount'>{amount}</p>
+                <p className='account-amount-description'>{description}</p>
             </article>
-            <div className='accountContentWrapper cta'>
-                <Button className='transactionButton' text='View transactions'/>
+            <div className='account-content-wrapper cta'>
+                <Button className='transaction-button' text='View transactions'/>
             </div>
         </section>
     );

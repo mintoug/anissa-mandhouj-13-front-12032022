@@ -70,6 +70,13 @@ body {
   width: 200px;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+}
+
 .hero {
   background-image: url('../assets/bank-tree.jpeg');
   background-position: 0 -50px;
@@ -128,6 +135,14 @@ body {
   flex-direction: column;
 }
 
+.errorMessage {
+  color: red;
+  font-weight: 700;
+}
+
+.nav-log {
+  display: flex;
+}
 @media (min-width: 920px) {
   .features {
     flex-direction: row;

@@ -17,7 +17,7 @@ const Header = (props) => {
                     <h1 className='sr-only'>Argent Bank</h1>
                 </Link>
 
-                <nav className='navLog'>
+                <nav className='nav-log'>
                 {props.connected 
                 ? (
                     <Fragment>
@@ -30,7 +30,7 @@ const Header = (props) => {
                         <div>    
                             <Link
                                 to={'/login'}
-                                className='mainNavItem'
+                                className='main nav-item'
                                 onClick={() => dispatch(logOut())}>
                                 <i className='fas fa-sign-out-alt'></i>
                                 Sign out
@@ -40,7 +40,7 @@ const Header = (props) => {
                 ) 
                 : (
                     <div>
-                        <Link to='/login' className='mainNavItem' >
+                        <Link to='/login' className='main-nav-item' >
                             <i className='fa fa-user-circle'></i>
                             Sign In
                         </Link>
