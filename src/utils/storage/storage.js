@@ -1,6 +1,6 @@
 const getLocalStorageKey = (key, defaultValue) => {
     const stored = localStorage.getItem(key);
-console.log(stored);
+
     if (!stored) {
         return defaultValue;
     }

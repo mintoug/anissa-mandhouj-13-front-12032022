@@ -1,4 +1,3 @@
-import '../../css/main.css';
 import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/argentBankLogo.png';
@@ -17,7 +16,7 @@ const Header = (props) => {
                     <h1 className='sr-only'>Argent Bank</h1>
                 </Link>
 
-                <nav className='nav-log'>
+            <nav className='nav-log'>
                 {props.connected 
                 ? (
                     <Fragment>

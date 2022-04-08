@@ -1,6 +1,5 @@
 import ApiProvider from '../../services/ApiProvider/ApiProvider';
 import Button from '../button/Button';
-import '../../css/main.css';
 import getLocalStorageKey from '../../utils/storage/storage';
 import Input from '../input/Input';
 import { logIn } from '../../utils/features/userSlice';

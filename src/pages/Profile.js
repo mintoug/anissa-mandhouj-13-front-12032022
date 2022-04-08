@@ -2,8 +2,6 @@ import React from 'react';
 import { ACCOUNTS_CONTENT } from '../utils/data/data';
 import Card from '../components/card/card';
 import UserProfileHeader from '../components/userProfileHeader/UserProfileHeader';
-import '../css/main.css'
-
 
 function Profile() {
   return (

@@ -1,4 +1,3 @@
-import '../../css/main.css';
 import React from 'react';
 
 const Button = ({ className, text, action}) => {

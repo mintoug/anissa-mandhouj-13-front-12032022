@@ -1,5 +1,4 @@
 import Button from '../button/Button';
-import '../../css/main.css';
 import React from 'react';
 
 const Card = ({title, amount, description}) => {

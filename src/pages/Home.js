@@ -1,6 +1,5 @@
 import React from 'react'
 import { FEATURES_CARDS_CONTENT } from '../utils/data/data';
-import '../css/main.css'
 import Banner from '../components/banner/Banner';
 import FeatureItem from '../components/featureItem/FeatureItem'
 

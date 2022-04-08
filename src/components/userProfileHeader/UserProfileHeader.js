@@ -1,6 +1,5 @@
 import ApiProvider from '../../services/ApiProvider/ApiProvider';
 import Button from '../button/Button';
-import '../../css/main.css';
 import { connect } from 'react-redux';
 import Input from '../input/Input';
 import PropTypes from 'prop-types';
