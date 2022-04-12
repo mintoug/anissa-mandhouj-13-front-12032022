@@ -1,6 +1,6 @@
 import ApiProvider from '../../services/ApiProvider/ApiProvider';
 import Button from '../button/Button';
-import getLocalStorageKey from '../../utils/storage/storage';
+import getLocalStorageKey from '../../utils/storage/localStorage';
 import Input from '../input/Input';
 import { logIn } from '../../utils/features/userSlice';
 import React, { useState, useEffect } from 'react';
