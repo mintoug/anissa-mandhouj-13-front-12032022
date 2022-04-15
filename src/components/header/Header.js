@@ -2,7 +2,6 @@ import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/argentBankLogo.png';
 import { logOut } from '../../utils/features/userSlice';
-import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 
 const Header = (props) => {
@@ -56,10 +55,6 @@ const mapStateToProps = state => {
         connected: state.user.connected,
         user: state.user.user,
     };
-}
-
-Header.propTypes = {
-    connected : PropTypes.bool.isRequired,
 }
 
 export default connect(mapStateToProps)(Header);

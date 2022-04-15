@@ -6,7 +6,7 @@ info:
   termsOfService: "http://swagger.io/terms/"
      
 host: "localhost:3000"
-basePath: "/api/v2"
+basePath: "/api-docs"
 schemes:
   - https
   - http
@@ -34,7 +34,7 @@ paths:
         '200':
           description: user transactions showed Successfully
           schema:
-            $ref: '#/definitions/Account_Response'
+            $ref: '#/definitions/Account-Response'
         '400':
           description: Either `token` or `accountId` are required.
         '500':
@@ -67,7 +67,7 @@ paths:
         '200':
           description: User transaction details retrieved Successfully
           schema:
-            $ref: '#/definitions/Transaction_Response'
+            $ref: '#/definitions/Transaction-Response'
         '400':
           description:  One of them `token`, `transactionId` or `accountId` are required.
         '500':
@@ -102,7 +102,7 @@ paths:
         '200':
           description: transaction informations successfully updated
           schema:
-            $ref: '#/definitions/Transaction_Updating_Response'
+            $ref: '#/definitions/Transaction-Updating-Response'
         '400':
           description: One of them `token`, `transactionId` or `accountId` are required.
         '500':
@@ -136,7 +136,7 @@ paths:
         '200':
           description: transaction informations successfully retrieved
           schema:
-            $ref: '#/definitions/Transaction_Retrieve_Details_Response'
+            $ref: '#/definitions/Transaction-Retrieve-Details-Response'
         '400':
           description: One of them `token`, `transactionId` or `accountId` are required.
         '500':
@@ -150,7 +150,7 @@ definitions:
   Transaction:
     type: object
     properties:
-      id_transaction:
+      transactionId:
         type: number
         description: transaction unique id
       date:
@@ -165,7 +165,7 @@ definitions:
   TransactionDetails:
     type: object
     properties:
-      id_transaction:
+      transactionId:
         type: number
         description: transaction unique id
       transactionType:
@@ -180,7 +180,7 @@ definitions:
   Account:
     type: object
     properties:
-      id:
+      accountId:
         type: number
         description: Id of the user account
       balance:
@@ -189,7 +189,7 @@ definitions:
       currency:
         type: string
         description: currency
-  Account_Response:
+  Account-Response:
     type: object
     properties:
       status:
@@ -201,7 +201,7 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Account'
-  Transaction_Response:
+  Transaction-Response:
     type: object
     properties:
       status:
@@ -213,7 +213,7 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Transaction'
-  Transaction_Updating_Response:
+  Transaction-Updating-Response:
     type: object
     properties:
       status:
@@ -225,7 +225,7 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/TransactionDetails'
-  Transaction_Retrieve_Details_Response:
+  Transaction-Retrieve-Details-Response:
     type: object
     properties:
       status:

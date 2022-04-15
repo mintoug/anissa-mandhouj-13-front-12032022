@@ -4,13 +4,11 @@ import Footer from '../components/footer/Footer';
 import Header from '../components/header/Header';
 import Login from '../pages/Login';
 import LogInJWT from '../utils/storage/LogInJWT';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { routes, MatchedRoutes } from '../router/routes';
 
 const App = (props) => {
-    // to establish the path to the API documentation
-  
+    
     // to log in the user using the JWT Token
     LogInJWT();
 
@@ -38,10 +36,6 @@ const mapStateToProps = state => {
     return {
         connected: state.user.connected,
     };
-}
-
-App.propTypes = {
-    connected : PropTypes.bool.isRequired,
 }
 
 export default connect(mapStateToProps)(App);

@@ -2,7 +2,6 @@ import ApiProvider from '../../services/ApiProvider/ApiProvider';
 import Button from '../button/Button';
 import { connect } from 'react-redux';
 import Input from '../input/Input';
-import PropTypes from 'prop-types';
 import { setUser, updateUser } from '../../utils/features/userSlice';
 import { useDispatch } from 'react-redux';
 import React, { Fragment, useState, useEffect } from 'react';
@@ -106,9 +105,7 @@ const UserProfileHeader = (props) => {
     );
 }
 
-UserProfileHeader.propTypes = {
-    token : PropTypes.string.isRequired,
-}
+
 
 const mapStateToProps = state => {
     return {
