@@ -45,6 +45,5 @@
 `npm start`    
 
 4. Front-end is now rendered at URL `http://localhost:3000`.    
-
 ## Auteur   
 * Anissa Mandhouj

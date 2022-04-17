@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "this is the documentation of Argent-BankApi in the Phase 2 : the transactions"
+  description: "this is the documentation of Argent-Bank Api in the Phase 2 : the transactions"
   version: "1.0.0"
   title: "Argent-Bank API documentation"
   termsOfService: "http://swagger.io/terms/"
@@ -44,7 +44,7 @@ paths:
       tags:
         - User transaction details
       summary: transaction details
-      description: retrieve specific information of the transaction
+      description: retrieve specific informations of the transaction
       parameters:
         - name: Authorization
           in: header
@@ -72,14 +72,14 @@ paths:
           description:  One of them `token`, `transactionId` or `accountId` are required.
         '500':
           description: Internal Server Error
-  /user/{accountId}/transaction/{transactionId}:
-    put:
+  /user/{accountId}/{transactionId}/category:
+    post:
       security:
         - Bearer: []
       tags:
         - User transaction details
       summary: Modify transaction details
-      description: Updating specific transactions informations
+      description: Updating specific transactions informations about category
       parameters:
         - name: Authorization
           in: header
@@ -100,7 +100,7 @@ paths:
         - application/json
       responses:
         '200':
-          description: transaction informations successfully updated
+          description: transaction informations about category successfully updated
           schema:
             $ref: '#/definitions/Transaction-Updating-Response'
         '400':
@@ -114,6 +114,75 @@ paths:
         - User transaction details
       summary: retrieve transaction details
       description: retrieve specific transactions informations
+      parameters:
+        - name: Authorization
+          in: header
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+        - name: accountId
+          in: path
+          description: ID of the account user
+          required: true
+          type: integer
+        - name: transactionId
+          in: path
+          description: ID of the transaction
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: transaction informations successfully retrieved
+          schema:
+            $ref: '#/definitions/Transaction-Retrieve-Details-Response'
+        '400':
+          description: One of them `token`, `transactionId` or `accountId` are required.
+        '500':
+          description: Internal Server Error
+  /user/{accountId}/{transactionId}/notes:
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - User transaction details
+      summary: Create transaction details
+      description: Add Notes to the transaction
+      parameters:
+        - name: Authorization
+          in: header
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+        - name: accountId
+          in: path
+          description: ID of the account user
+          required: true
+          type: integer
+        - name: transactionId
+          in: path
+          description: ID of the transaction
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: transaction notes successfully updated
+          schema:
+            $ref: '#/definitions/Transaction-Updating-Response'
+        '400':
+          description: One of them `token`, `transactionId` or `accountId` are required.
+        '500':
+          description: Internal Server Error
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User transaction details
+      summary: retrieve transaction details
+      description: retrieve specific transaction information
       parameters:
         - name: Authorization
           in: header
@@ -156,6 +225,9 @@ definitions:
       date:
         type: string
         description: date of transaction
+      description:
+        type: string
+        description: description of transaction
       amount:
         type: number
         description: amount of transaction
@@ -220,7 +292,7 @@ definitions:
         type: integer
       message:
         type: string
-        example: User transaction updated succesfully
+        example: transaction updated succesfully
       body:
         type: array
         items:

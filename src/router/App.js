@@ -1,14 +1,16 @@
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch , Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 import Footer from '../components/footer/Footer';
 import Header from '../components/header/Header';
+import Home from '../pages/Home';
 import Login from '../pages/Login';
+import Profile from '../pages/Profile';
+import Error from '../pages/Error';
 import LogInJWT from '../utils/storage/LogInJWT';
 import React from 'react';
-import { routes, MatchedRoutes } from '../router/routes';
 
 const App = (props) => {
-    
+  
     // to log in the user using the JWT Token
     LogInJWT();
 
@@ -17,14 +19,10 @@ const App = (props) => {
             <Router>
                     <Header />
                     <Switch>
-                        {routes.map((route, index) =>
-                            !props.connected && route.private 
-                            ? (
-                                <Login key={index} exact path={route.path} />
-                            ) : (
-                                <MatchedRoutes key={index} {...route} />
-                            )
-                        )}
+                        <Route exact path='/'> <Home /></Route>
+                        <Route exact path='/login'> <Login /> </Route>
+                        <Route exact path='/profile'> <Profile /> </Route>
+                        <Route exact path='*'> <Error /></Route>
                     </Switch>
                     <Footer />
             </Router>
